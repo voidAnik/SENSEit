@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">senseit</string>
-    <string name="sensing_title">What your companion sensing</string>
+    <string name="app_name">SENSEit</string>
+    <string name="sensing_title">What\'s your companion sensing</string>
     <string name="bg_desc">normal card-view background image</string>
-    <string name="gyroscope_card_title">Whats Gyroscope Sensor sensing:</string>
-    <string name="accelerometer_card_title">Whats Accelerometer Sensor sensing:</string>
-    <string name="proximity_card_title">Whats Proximity Sensor sensing:</string>
-    <string name="light_card_title">Whats Light Sensor sensing:</string>
+    <string name="gyroscope_card_title">What\'s Gyroscope Sensor sensing(rad/s):</string>
+    <string name="accelerometer_card_title">What\'s Accelerometer Sensor sensing(m/s2):</string>
+    <string name="proximity_card_title">What\'s Proximity Sensor sensing(cm):</string>
+    <string name="light_card_title">What\'s Light Sensor sensing(lux):</string>
     <string name="no_value">00.0</string>
     <string name="not_available_light">Light sensor is not available</string>
     <string name="not_available_proxy">Proximity sensor is not available</string>

@@ -16,7 +16,8 @@
         android:textSize="18sp"
         android:padding="10dp"
         android:textAllCaps="true"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:textColor="@color/black"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -48,7 +49,7 @@
             android:padding="15dp"
             android:text="@string/light_card_title"
             android:textSize="20sp"
-            android:textColor="@color/black"/>
+            />
         <TextView
             android:id="@+id/light_value"
             android:layout_width="wrap_content"
@@ -68,9 +69,6 @@
             android:src="@drawable/light_icon"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="5dp"
             android:contentDescription="@string/bg_desc" />
     </RelativeLayout>
     </androidx.cardview.widget.CardView>
@@ -97,7 +95,7 @@
             android:padding="15dp"
             android:text="@string/proximity_card_title"
             android:textSize="20sp"
-            android:textColor="@color/black"/>
+            />
         <TextView
             android:id="@+id/proxy_value"
             android:layout_width="wrap_content"
@@ -116,9 +114,6 @@
             android:src="@drawable/proximity_icon"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="5dp"
             android:contentDescription="@string/bg_desc" />
     </RelativeLayout>
     </androidx.cardview.widget.CardView>
@@ -144,7 +139,7 @@
                         android:padding="15dp"
                         android:text="@string/accelerometer_card_title"
                         android:textSize="20sp"
-                        android:textColor="@color/black"/>
+                        />
                     <TextView
                         android:id="@+id/accelerometer_value"
                         android:layout_width="wrap_content"
@@ -163,9 +158,6 @@
                     android:src="@drawable/accelerometer_icon"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginTop="5dp"
                     android:contentDescription="@string/bg_desc" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -191,7 +183,7 @@
                         android:padding="15dp"
                         android:text="@string/gyroscope_card_title"
                         android:textSize="20sp"
-                        android:textColor="@color/black"/>
+                        />
                     <TextView
                         android:id="@+id/gyro_value"
                         android:layout_width="wrap_content"
@@ -210,9 +202,6 @@
                     android:src="@drawable/gyroscope_icon"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginTop="5dp"
                     android:contentDescription="@string/bg_desc" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>

@@ -8,12 +8,12 @@
         "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_light_icon.png.flat",
-        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\drawable-v24\\light_icon.png"
-    },
-    {
         "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_senseit_logo.png.flat",
         "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\drawable-v24\\senseit_logo.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_light_icon.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\drawable-v24\\light_icon.png"
     },
     {
         "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_foreground.png.flat",
@@ -24,12 +24,12 @@
         "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_launcher_background.png"
     },
     {
-        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_gyroscope_icon.png.flat",
-        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\drawable-v24\\gyroscope_icon.png"
-    },
-    {
         "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_gyroscope_icon.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\drawable-v24\\gyroscope_icon.png"
     },
     {
         "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_orange_bg.png.flat",
@@ -112,16 +112,16 @@
         "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\drawable-v24\\yellow_bg.png"
     },
     {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_green_bg.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\drawable-v24\\green_bg.png"
+    },
+    {
         "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_green_bg.png.flat",
-        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\drawable-v24\\green_bg.png"
     },
     {
         "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher_background.png.flat",
@@ -132,12 +132,12 @@
         "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_accelerometer_icon.png.flat",
-        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\drawable-v24\\accelerometer_icon.png"
-    },
-    {
         "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_purple_bg.png.flat",
         "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\drawable-v24\\purple_bg.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_accelerometer_icon.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\drawable-v24\\accelerometer_icon.png"
     },
     {
         "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
