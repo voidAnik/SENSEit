@@ -1,0 +1,4 @@
+com/example/senseit/MainActivity.java
+ com.example.senseit.MainActivity
+com/example/senseit/BuildConfig.java
+ com.example.senseit.BuildConfig

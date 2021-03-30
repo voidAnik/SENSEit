@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/aclonica"
         android:text="@string/sensing_title"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:padding="10dp"
         android:textAllCaps="true"
         android:layout_gravity="center" />
@@ -22,7 +22,7 @@
         android:layout_height="match_parent"
         android:weightSum="4"
         android:orientation="vertical"
-        android:layout_margin="10dp"
+        android:layout_margin="7dp"
         >
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
@@ -32,30 +32,33 @@
         >
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:background="@color/light_white">
     <RelativeLayout
+        android:id="@+id/light_card"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="@drawable/bg1"
-        android:layout_margin="20dp">
+        android:layout_height="wrap_content"
+        android:background="@drawable/blue_bg"
+        android:layout_margin="15dp">
 
         <TextView
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/acme"
             android:padding="15dp"
-            android:text="What Light Sensor sensing:"
-            android:textSize="24sp"
+            android:text="@string/light_card_title"
+            android:textSize="20sp"
             android:textColor="@color/black"/>
         <TextView
+            android:id="@+id/light_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/acme"
             android:padding="20dp"
-            android:text="NO VALUE"
+            android:text="@string/no_value"
             android:textSize="24sp"
+            android:textColor="@color/red"
             android:layout_alignParentBottom="true"/>
 
     </RelativeLayout>
@@ -67,7 +70,8 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp"
+            android:contentDescription="@string/bg_desc" />
     </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
@@ -78,29 +82,32 @@
         android:layout_weight="1">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:background="@color/light_white">
     <RelativeLayout
+        android:id="@+id/proxy_card"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/bg1"
-        android:layout_margin="20dp">
+        android:layout_margin="15dp">
         <TextView
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/acme"
             android:padding="15dp"
-            android:text="What Proximity Sensor sensing:"
-            android:textSize="24sp"
+            android:text="@string/proximity_card_title"
+            android:textSize="20sp"
             android:textColor="@color/black"/>
         <TextView
+            android:id="@+id/proxy_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/acme"
             android:padding="20dp"
-            android:text="NO VALUE"
+            android:text="@string/no_value"
             android:textSize="24sp"
+            android:textColor="@color/red"
             android:layout_alignParentBottom="true"/>
     </RelativeLayout>
         <ImageView
@@ -111,7 +118,8 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp"
+            android:contentDescription="@string/bg_desc" />
     </RelativeLayout>
     </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
@@ -121,29 +129,32 @@
             android:layout_weight="1">
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="wrap_content"
                 android:background="@color/light_white">
                 <RelativeLayout
+                    android:id="@+id/accelerometer_card"
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:background="@drawable/bg1"
-                    android:layout_margin="20dp">
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/orange_bg"
+                    android:layout_margin="15dp">
                     <TextView
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/acme"
                         android:padding="15dp"
-                        android:text="What Accelerometer Sensor sensing:"
-                        android:textSize="24sp"
+                        android:text="@string/accelerometer_card_title"
+                        android:textSize="20sp"
                         android:textColor="@color/black"/>
                     <TextView
+                        android:id="@+id/accelerometer_value"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:fontFamily="@font/acme"
                         android:padding="20dp"
-                        android:text="NO VALUE"
+                        android:text="@string/no_value"
                         android:textSize="24sp"
+                        android:textColor="@color/red"
                         android:layout_alignParentBottom="true"/>
                 </RelativeLayout>
                 <ImageView
@@ -154,7 +165,8 @@
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="5dp"
                     android:layout_marginRight="5dp"
-                    android:layout_marginTop="5dp"/>
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="@string/bg_desc" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
@@ -164,29 +176,32 @@
             android:layout_weight="1">
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="wrap_content"
                 android:background="@color/light_white">
                 <RelativeLayout
+                    android:id="@+id/gyro_card"
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:background="@drawable/bg1"
-                    android:layout_margin="20dp">
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/green_bg"
+                    android:layout_margin="15dp">
                     <TextView
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/acme"
                         android:padding="15dp"
-                        android:text="What Gyroscope Sensor sensing:"
-                        android:textSize="24sp"
+                        android:text="@string/gyroscope_card_title"
+                        android:textSize="20sp"
                         android:textColor="@color/black"/>
                     <TextView
+                        android:id="@+id/gyro_value"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:fontFamily="@font/acme"
                         android:padding="20dp"
-                        android:text="NO VALUE"
+                        android:text="@string/no_value"
                         android:textSize="24sp"
+                        android:textColor="@color/red"
                         android:layout_alignParentBottom="true"/>
                 </RelativeLayout>
                 <ImageView
@@ -197,7 +212,8 @@
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="5dp"
                     android:layout_marginRight="5dp"
-                    android:layout_marginTop="5dp"/>
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="@string/bg_desc" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
