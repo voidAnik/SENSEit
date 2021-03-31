@@ -6,7 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="@color/light_white"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:forceDarkAllowed="false"
+    tools:targetApi="q">
 
     <TextView
         android:layout_width="wrap_content"

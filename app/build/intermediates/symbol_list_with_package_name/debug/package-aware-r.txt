@@ -1649,6 +1649,8 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable green_bg
 drawable gyroscope_icon
+drawable ic_baseline_menu_open_24
+drawable ic_baseline_warning_24
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
@@ -1977,6 +1979,7 @@ id notification_main_column
 id notification_main_column_container
 id off
 id on
+id option
 id outline
 id outward
 id packed
@@ -2059,6 +2062,7 @@ id startVertical
 id staticLayout
 id staticPostLayout
 id stop
+id stop_fg
 id stretch
 id submenuarrow
 id submit_area
@@ -2262,6 +2266,7 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+menu options_menu
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
@@ -2377,6 +2382,7 @@ string proximity_card_title
 string search_menu_title
 string sensing_title
 string status_bar_notification_info_overflow
+string stop_service
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow

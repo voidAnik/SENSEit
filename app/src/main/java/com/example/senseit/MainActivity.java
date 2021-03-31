@@ -1,6 +1,8 @@
 package com.example.senseit;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.annotation.SuppressLint;
 import android.app.Service;
@@ -11,6 +13,9 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -68,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         Intent serviceIntent = new Intent(this, ForegroundProcess.class);
         serviceIntent.putExtra("sensor_values", sensor_values);
+        serviceIntent.putExtra("bool", true);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             startForegroundService(serviceIntent);
         }
@@ -133,5 +139,27 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     protected void onDestroy() {
         super.onDestroy();
         sensorManager.unregisterListener(this);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.options_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.stop_fg:
+                Intent serviceIntent = new Intent(this, ForegroundProcess.class);
+                serviceIntent.putExtra("sensor_values", sensor_values);
+                serviceIntent.putExtra("bool", false);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    startForegroundService(serviceIntent);
+                }
+                return true;
+        }
+        return true;
     }
 }

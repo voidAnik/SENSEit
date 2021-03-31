@@ -1,0 +1,28 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v29\\values-v29.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\values-v29\\themes.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "106",
+                        "endLines": "16",
+                        "endColumns": "12",
+                        "endOffsets": "894"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "100",
+                        "endLines": "15",
+                        "endColumns": "12",
+                        "endOffsets": "873"
+                    }
+                }
+            ]
+        }
+    ]
+}
