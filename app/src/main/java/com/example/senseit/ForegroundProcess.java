@@ -75,7 +75,7 @@ public class ForegroundProcess extends Service implements SensorEventListener {
                 .setOngoing(true)
                 .setContentIntent(pendingIntent)
                 .setOnlyAlertOnce(true)
-                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setPriority(NotificationCompat.PRIORITY_LOW)
                 .build();
         return notification;
     }

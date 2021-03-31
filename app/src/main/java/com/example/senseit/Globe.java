@@ -17,7 +17,7 @@ public class Globe extends Application {
 
         //Creating notification Channel
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ){
-            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_HIGH);
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_LOW);
             channel.setDescription(CHANNEL_DESC);
             NotificationManager nManager = getSystemService(NotificationManager.class);
             nManager.createNotificationChannel(channel);
