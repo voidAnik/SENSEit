@@ -1,10 +1,10 @@
+com/example/senseit/BuildConfig.java
+ com.example.senseit.BuildConfig
+com/example/senseit/SensorValue.java
+ com.example.senseit.SensorValue
+com/example/senseit/Globe.java
+ com.example.senseit.Globe
 com/example/senseit/ForegroundProcess.java
  com.example.senseit.ForegroundProcess
 com/example/senseit/MainActivity.java
  com.example.senseit.MainActivity
-com/example/senseit/Globe.java
- com.example.senseit.Globe
-com/example/senseit/SensorValue.java
- com.example.senseit.SensorValue
-com/example/senseit/BuildConfig.java
- com.example.senseit.BuildConfig
