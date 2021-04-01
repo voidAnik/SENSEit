@@ -14,6 +14,7 @@ import android.os.IBinder;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.NotificationCompat;
 
 import java.util.Arrays;
@@ -71,6 +72,7 @@ public class ForegroundProcess extends Service implements SensorEventListener {
     @Override
     public void onCreate() {
         super.onCreate();
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         sensorManager = (SensorManager) getSystemService(Service.SENSOR_SERVICE);
         if(sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT)!=null) {
             light_sensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);

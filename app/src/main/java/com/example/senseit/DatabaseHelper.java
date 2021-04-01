@@ -36,7 +36,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                                                 +VALUE_Z+" DOUBLE ); "; // SQL command for creating table
 
     private static final String DROP_TABLE = "DROP TABLE IF EXISTS "+TABLE_NAME; // SQL command for drop table
-    private static final String SELECT_ALL = "SELECT * FROM "+TABLE_NAME;
+    private static final String SELECT_ALL = "SELECT * FROM "+TABLE_NAME; // SQL command to fetch all data
+    private static final String SELECT_LIGHT = "SELECT * FROM "+TABLE_NAME+" WHERE SENSOR_ID = 1";
+    private static final String SELECT_PROXY = "SELECT * FROM "+TABLE_NAME+" WHERE SENSOR_ID = 2";
+    private static final String SELECT_ACCELEROMETER = "SELECT * FROM "+TABLE_NAME+" WHERE SENSOR_ID = 3";
+    private static final String SELECT_GYRO = "SELECT * FROM "+TABLE_NAME+" WHERE SENSOR_ID = 4";
+
+
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, VERSION_NUMBER);
@@ -102,5 +108,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Cursor getAllData(){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         return sqLiteDatabase.rawQuery(SELECT_ALL, null);
+    }
+    public Cursor getLightData(){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        return sqLiteDatabase.rawQuery(SELECT_LIGHT, null);
+    }
+    public Cursor getProxyData(){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        return sqLiteDatabase.rawQuery(SELECT_PROXY, null);
+    }
+    public Cursor getAccelerometerData(){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        return sqLiteDatabase.rawQuery(SELECT_ACCELEROMETER, null);
+    }
+    public Cursor getGyroData(){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        return sqLiteDatabase.rawQuery(SELECT_GYRO, null);
     }
 }

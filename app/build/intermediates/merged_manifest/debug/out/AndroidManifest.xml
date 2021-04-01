@@ -21,6 +21,13 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.Senseit" >
+        <activity
+            android:name="com.example.senseit.HistoryActivity"
+            android:parentActivityName="com.example.senseit.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.senseit.HistoryActivity" />
+        </activity>
         <activity android:name="com.example.senseit.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

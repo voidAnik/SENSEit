@@ -18,10 +18,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements SensorEventListener {
+public class MainActivity extends AppCompatActivity implements SensorEventListener, View.OnClickListener {
     //Defined variables
     RelativeLayout light_card, proxy_card, accelerometer_card, gyro_card;
     TextView light_value, proxy_value, accelerometer_value, gyro_value;
@@ -33,15 +35,20 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.activity_main);
 
         sensor_values = new SensorValue();
 
         // Custom Binding
         light_card = findViewById(R.id.light_card);
+        light_card.setOnClickListener(this);
         proxy_card = findViewById(R.id.proxy_card);
+        proxy_card.setOnClickListener(this);
         accelerometer_card = findViewById(R.id.accelerometer_card);
+        accelerometer_card.setOnClickListener(this);
         gyro_card = findViewById(R.id.gyro_card);
+        gyro_card.setOnClickListener(this);
 
         light_value = findViewById(R.id.light_value);
         proxy_value = findViewById(R.id.proxy_value);
@@ -187,5 +194,33 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         }
         return true;
+    }
+
+    @Override
+    public void onClick(View view) {
+
+        switch (view.getId())
+        {
+            case R.id.light_card:
+                Toast.makeText(this, "clicked", Toast.LENGTH_SHORT).show();
+                goToHistory(1);
+                break;
+            case R.id.proxy_card:
+                goToHistory(2);
+                break;
+            case R.id.accelerometer_card:
+                goToHistory(3);
+                break;
+            case R.id.gyro_card:
+                goToHistory(4);
+                break;
+        }
+
+    }
+
+    private void goToHistory(int id) {
+        Intent history_intent = new Intent(MainActivity.this, HistoryActivity.class);
+        history_intent.putExtra("sensor_id", id);
+        startActivity(history_intent);
     }
 }
