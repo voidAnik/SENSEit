@@ -72,7 +72,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public long[] insertData(SensorValue v){
+    public long[] insertData(SensorValue v){ // inserting data to Database
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -128,7 +128,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return sqLiteDatabase.rawQuery(SELECT_GYRO, null);
     }
 
-    public boolean delete_data(int sensor_id){
+    public boolean delete_data(int sensor_id){ // To delete data for a specific sensor
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         String where = SENSOR_ID + "=" + sensor_id;
         return sqLiteDatabase.delete(TABLE_NAME, where, null) != 0;

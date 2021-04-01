@@ -1,5 +1,6 @@
 package com.example.senseit;
 
+import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -37,6 +38,7 @@ public class ForegroundProcess extends Service implements SensorEventListener {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
+        // registering the sensors
         sensorManager.registerListener(this, light_sensor, SensorManager.SENSOR_DELAY_FASTEST);
         sensorManager.registerListener(this, proximity_sensor, SensorManager.SENSOR_DELAY_FASTEST);
         sensorManager.registerListener(this, accelerometer_sensor, SensorManager.SENSOR_DELAY_FASTEST);
@@ -48,8 +50,6 @@ public class ForegroundProcess extends Service implements SensorEventListener {
         pendingIntent = PendingIntent.getActivity(this, 0, notifyIntent, 0);
         //NotificationCompat.Builder nBuilder =
         Notification notification = createNotification();
-
-
 
 
         if(aBoolean) {
@@ -97,6 +97,8 @@ public class ForegroundProcess extends Service implements SensorEventListener {
     }
 
     private Notification createNotification() {
+
+        // creating notification for the foreground service with the live sensor values updated
         return new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setSmallIcon(R.drawable.senseit_logo)
                 .setContentTitle(getString(R.string.sensing_title) + ":")
@@ -117,8 +119,8 @@ public class ForegroundProcess extends Service implements SensorEventListener {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        /*stopForeground(true);
-        sensorManager.unregisterListener(this);*/
+        sensorManager.unregisterListener(this);
+        stopForeground(true);
     }
 
     @Nullable
@@ -128,6 +130,7 @@ public class ForegroundProcess extends Service implements SensorEventListener {
     }
 
 
+    @SuppressLint("DefaultLocale")
     @Override
     public void onSensorChanged(SensorEvent event) {
         if(event.sensor.getType() == Sensor.TYPE_LIGHT){
@@ -156,7 +159,7 @@ public class ForegroundProcess extends Service implements SensorEventListener {
         }
     }
 
-    private void save_data(SensorValue sensor_values) {
+    private void save_data(SensorValue sensor_values) { // Saving the data to Database
         long[] row_ids = databaseHelper.insertData(sensor_values);
 
         //Toast.makeText(this, ""+ Arrays.toString(row_ids), Toast.LENGTH_SHORT).show();

@@ -35,12 +35,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO); // tp turn of the default night mode
         setContentView(R.layout.activity_main);
 
-        sensor_values = new SensorValue();
-
-        // Custom Binding
+        // Custom Binding and initializing to OnclickListener
         light_card = findViewById(R.id.light_card);
         light_card.setOnClickListener(this);
         proxy_card = findViewById(R.id.proxy_card);
@@ -80,6 +78,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             gyro_value.setText(R.string.not_available_gyro);
         }
 
+        // Starting the foreground services with the live notification
         Intent serviceIntent = new Intent(this, ForegroundProcess.class);
         serviceIntent.putExtra("sensor_values", sensor_values);
         serviceIntent.putExtra("bool", true);
@@ -98,6 +97,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     protected void onStart() {
         super.onStart();
+        // Registering the sensors
         sensorManager.registerListener(this, light_sensor, SensorManager.SENSOR_DELAY_NORMAL);
         sensorManager.registerListener(this, proximity_sensor, SensorManager.SENSOR_DELAY_NORMAL);
         sensorManager.registerListener(this, accelerometer_sensor, SensorManager.SENSOR_DELAY_NORMAL);
@@ -116,6 +116,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @SuppressLint({"DefaultLocale", "SetTextI18n"})
     @Override
     public void onSensorChanged(SensorEvent event) {
+
+        // Getting values from sensors on every changes
         if(event.sensor.getType() == Sensor.TYPE_LIGHT){
             light_value.setText(String.valueOf(event.values[0]));
             /*sensor_values.light_value = event.values[0];*/
@@ -156,7 +158,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        sensorManager.unregisterListener(this);
+        sensorManager.unregisterListener(this); // unregister the sensors on destroy
     }
 
     @Override
@@ -169,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.stop_fg:
+            case R.id.stop_fg: // Menu button to stop the foreground service
                 Intent serviceIntent = new Intent(this, ForegroundProcess.class);
                 serviceIntent.putExtra("sensor_values", sensor_values);
                 serviceIntent.putExtra("bool", false);
@@ -177,7 +179,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                     startForegroundService(serviceIntent);
                 }
                 return true;
-            case R.id.exit:
+            case R.id.exit: // To exit the application
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setMessage("Are you sure you want to exit?")
                         .setNegativeButton("No", null)
@@ -199,6 +201,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     public void onClick(View view) {
 
+        // response to click on cards
         switch (view.getId())
         {
             case R.id.light_card:
@@ -218,6 +221,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
 
     private void goToHistory(int id) {
+
+        // To history activity
         Intent history_intent = new Intent(MainActivity.this, HistoryActivity.class);
         history_intent.putExtra("sensor_id", id);
         startActivity(history_intent);

@@ -48,7 +48,7 @@ public class HistoryActivity extends AppCompatActivity {
         loadData(sensor_id);
     }
 
-    private void loadData(int id) {
+    private void loadData(int id) { // Load data from database to show on listView
         ArrayList<String> column1 = new ArrayList<>();
         ArrayList<String> column2 = new ArrayList<>();
         Cursor results;
@@ -109,6 +109,8 @@ public class HistoryActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        // To clear all data for a specific sensor with a confirmation dialogue
         if (item.getItemId() == R.id.clear) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("Want to clear all data for this Sensor?")
