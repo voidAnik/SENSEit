@@ -49,16 +49,9 @@ public class ForegroundProcess extends Service implements SensorEventListener {
         //NotificationCompat.Builder nBuilder =
         Notification notification = createNotification();
 
-        final Handler handler = new Handler(); // handler to save the sensor data to database every 5 minute
-        final int delay =60000; // 1000 milliseconds == 1 second
 
-        handler.postDelayed(new Runnable() {
-            public void run() {
-                save_data(sensor_values);
-                Toast.makeText(ForegroundProcess.this, "Saved data", Toast.LENGTH_SHORT).show();
-                handler.postDelayed(this, delay);
-            }
-        }, delay);
+
+
         if(aBoolean) {
             startForeground(NOTIFICATION_ID, notification);
         }
@@ -88,10 +81,19 @@ public class ForegroundProcess extends Service implements SensorEventListener {
         }
 
 
-
         //Database related
         databaseHelper = new DatabaseHelper(this);
         SQLiteDatabase sqLiteDatabase = databaseHelper.getWritableDatabase();
+
+        final Handler handler = new Handler(); // handler to save the sensor data to database every 5 minute
+        final int delay =300000; // 1000 milliseconds == 1 second
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                save_data(sensor_values);
+                //Toast.makeText(ForegroundProcess.this, "Saved data", Toast.LENGTH_SHORT).show();
+                handler.postDelayed(this, delay);
+            }
+        }, delay);
     }
 
     private Notification createNotification() {
@@ -157,7 +159,7 @@ public class ForegroundProcess extends Service implements SensorEventListener {
     private void save_data(SensorValue sensor_values) {
         long[] row_ids = databaseHelper.insertData(sensor_values);
 
-        Toast.makeText(this, ""+ Arrays.toString(row_ids), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, ""+ Arrays.toString(row_ids), Toast.LENGTH_SHORT).show();
     }
 
     @Override

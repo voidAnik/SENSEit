@@ -11,5 +11,6 @@
     <color name="light_white2">#f8f8ff</color>
     <color name="red">#FF0000</color>
     <color name="dark_yellow">#FFAA00</color>
+    <color name="primary_yellow">#FFC107</color>
 
 </resources>

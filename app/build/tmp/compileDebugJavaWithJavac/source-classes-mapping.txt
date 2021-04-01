@@ -1,3 +1,11 @@
+com/example/senseit/BuildConfig.java
+ com.example.senseit.BuildConfig
+com/example/senseit/SensorValue.java
+ com.example.senseit.SensorValue
+com/example/senseit/CustomAdapter.java
+ com.example.senseit.CustomAdapter
+com/example/senseit/Globe.java
+ com.example.senseit.Globe
 com/example/senseit/ForegroundProcess.java
  com.example.senseit.ForegroundProcess
  com.example.senseit.ForegroundProcess$1
@@ -8,11 +16,4 @@ com/example/senseit/DatabaseHelper.java
  com.example.senseit.DatabaseHelper
 com/example/senseit/HistoryActivity.java
  com.example.senseit.HistoryActivity
-com/example/senseit/Globe.java
- com.example.senseit.Globe
-com/example/senseit/CustomAdapter.java
- com.example.senseit.CustomAdapter
-com/example/senseit/SensorValue.java
- com.example.senseit.SensorValue
-com/example/senseit/BuildConfig.java
- com.example.senseit.BuildConfig
+ com.example.senseit.HistoryActivity$1

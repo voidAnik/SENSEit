@@ -12,4 +12,12 @@
     <string name="not_available_accelerometer">Accelerometer sensor is not available</string>
     <string name="not_available_gyro">Gyroscope sensor is not available</string>
     <string name="stop_service">STOP SERVICE</string>
+    <string name="sample_text">Sample text</string>
+    <string name="time_stamp">TIME STAMP</string>
+    <string name="sensor_values">SENSOR VALUES</string>
+    <string name="light_history_title">HISTORY OF LIGHT SENSOR</string>
+    <string name="proxy_history_title">HISTORY OF PROXIMITY SENSOR</string>
+    <string name="acc_history_title">HISTORY OF ACCELEROMETER SENSOR</string>
+    <string name="gyro_history_title">HISTORY OF GYROSCOPE SENSOR</string>
+    <string name="clear">CLEAR</string>
 </resources>

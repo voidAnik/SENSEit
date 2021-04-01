@@ -20,6 +20,15 @@
         android:textAllCaps="true"
         android:layout_gravity="center"
         android:textColor="@color/black"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/primary_yellow"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
+        />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -52,17 +61,18 @@
             android:text="@string/light_card_title"
             android:textSize="20sp"
             />
+
         <TextView
             android:id="@+id/light_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:fontFamily="@font/acme"
+            android:fontFamily="@font/montserrat"
             android:padding="20dp"
             android:text="@string/no_value"
-            android:textSize="24sp"
-            android:textColor="@color/red"
-            android:layout_alignParentBottom="true"/>
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
     </RelativeLayout>
         <ImageView
@@ -88,7 +98,7 @@
         android:id="@+id/proxy_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg1"
+        android:background="@drawable/yellow_bg"
         android:layout_margin="15dp">
         <TextView
             android:layout_width="300dp"
@@ -103,11 +113,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:fontFamily="@font/acme"
             android:padding="20dp"
             android:text="@string/no_value"
-            android:textSize="24sp"
-            android:textColor="@color/red"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrat"
             android:layout_alignParentBottom="true"/>
     </RelativeLayout>
         <ImageView
@@ -147,11 +157,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:fontFamily="@font/acme"
                         android:padding="20dp"
                         android:text="@string/no_value"
-                        android:textSize="24sp"
-                        android:textColor="@color/red"
+                        android:textSize="20sp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/montserrat"
                         android:layout_alignParentBottom="true"/>
                 </RelativeLayout>
                 <ImageView
@@ -176,7 +186,7 @@
                     android:id="@+id/gyro_card"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/green_bg"
+                    android:background="@drawable/pink_bg"
                     android:layout_margin="15dp">
                     <TextView
                         android:layout_width="300dp"
@@ -191,11 +201,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:fontFamily="@font/acme"
                         android:padding="20dp"
                         android:text="@string/no_value"
-                        android:textSize="24sp"
-                        android:textColor="@color/red"
+                        android:textSize="20sp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/montserrat"
                         android:layout_alignParentBottom="true"/>
                 </RelativeLayout>
                 <ImageView

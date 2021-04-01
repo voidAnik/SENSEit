@@ -202,7 +202,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         switch (view.getId())
         {
             case R.id.light_card:
-                Toast.makeText(this, "clicked", Toast.LENGTH_SHORT).show();
                 goToHistory(1);
                 break;
             case R.id.proxy_card:

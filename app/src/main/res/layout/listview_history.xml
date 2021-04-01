@@ -13,7 +13,7 @@
         android:padding="10dp"
         android:textStyle="bold"
         android:textSize="17sp"
-        android:text="sample text 1"
+        android:text="@string/sample_text"
         android:gravity="center"/>
     <TextView
         android:id="@+id/column2"
@@ -23,7 +23,7 @@
         android:padding="10dp"
         android:textStyle="bold"
         android:textSize="17sp"
-        android:text="sample text 2"
+        android:text="@string/sample_text"
         android:gravity="center"/>
 
 

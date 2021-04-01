@@ -37,10 +37,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DROP_TABLE = "DROP TABLE IF EXISTS "+TABLE_NAME; // SQL command for drop table
     private static final String SELECT_ALL = "SELECT * FROM "+TABLE_NAME; // SQL command to fetch all data
+    // SQL command to extract specific sensor data
     private static final String SELECT_LIGHT = "SELECT * FROM "+TABLE_NAME+" WHERE SENSOR_ID = 1";
     private static final String SELECT_PROXY = "SELECT * FROM "+TABLE_NAME+" WHERE SENSOR_ID = 2";
     private static final String SELECT_ACCELEROMETER = "SELECT * FROM "+TABLE_NAME+" WHERE SENSOR_ID = 3";
     private static final String SELECT_GYRO = "SELECT * FROM "+TABLE_NAME+" WHERE SENSOR_ID = 4";
+    private static final String DELETE_DATA = "DELETE FROM "+TABLE_NAME+" WHERE SENSOR_ID = "; // SQL command to delete data
 
 
 
@@ -52,7 +54,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         try {
-            Toast.makeText(context, "Table Created!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "WELCOME!", Toast.LENGTH_SHORT).show();
             db.execSQL(CREATE_TABLE); // Creating table for the database
         }catch (Exception e){
             Toast.makeText(context, "Exception:" + e, Toast.LENGTH_SHORT).show();
@@ -74,32 +76,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        String currentTime = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
+        String currentDateTime = new SimpleDateFormat("YYYY-MM-DD HH:mm", Locale.getDefault()).format(new Date());
 
         //Creating 4 content values to insert 4 sensor values to database
         long[] row_ids = new long[4];
         contentValues.put(SENSOR_ID, 1);
         contentValues.put(VALUE_X, v.light_value );
-        contentValues.put(TIME, currentTime);
+        contentValues.put(TIME, currentDateTime);
         row_ids[0] = sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
 
         contentValues.put(SENSOR_ID, 2);
         contentValues.put(VALUE_X, v.proxy_value );
-        contentValues.put(TIME, currentTime);
+        contentValues.put(TIME, currentDateTime);
         row_ids[1] = sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
 
         contentValues.put(SENSOR_ID, 3);
         contentValues.put(VALUE_X, v.accelerometer_value[0] );
         contentValues.put(VALUE_Y, v.accelerometer_value[1] );
         contentValues.put(VALUE_Z, v.accelerometer_value[2] );
-        contentValues.put(TIME, currentTime);
+        contentValues.put(TIME, currentDateTime);
         row_ids[2] = sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
 
         contentValues.put(SENSOR_ID, 4);
         contentValues.put(VALUE_X, v.gyro_value[0] );
         contentValues.put(VALUE_Y, v.gyro_value[1] );
         contentValues.put(VALUE_Z, v.gyro_value[2] );
-        contentValues.put(TIME, currentTime);
+        contentValues.put(TIME, currentDateTime);
         row_ids[3] = sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
 
         return row_ids;
@@ -124,5 +126,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Cursor getGyroData(){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         return sqLiteDatabase.rawQuery(SELECT_GYRO, null);
+    }
+
+    public boolean delete_data(int sensor_id){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        String where = SENSOR_ID + "=" + sensor_id;
+        return sqLiteDatabase.delete(TABLE_NAME, where, null) != 0;
     }
 }
