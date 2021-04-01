@@ -1,0 +1,278 @@
+[
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-v24_blue_bg.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\drawable-v24\\blue_bg.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\layout_listview_history.xml.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\layout\\listview_history.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_ic_baseline_warning_24.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\release\\drawable-mdpi\\ic_baseline_warning_24.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_ic_baseline_exit_to_app_24.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\release\\drawable-mdpi\\ic_baseline_exit_to_app_24.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\menu_history_options_menu.xml.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\menu\\history_options_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-anydpi-v21_ic_baseline_menu_open_24.xml.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\release\\drawable-anydpi-v21\\ic_baseline_menu_open_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\font_acme.ttf.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\font\\acme.ttf"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\font_aclonica.ttf.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\font\\aclonica.ttf"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\release\\drawable-xhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxxhdpi_ic_baseline_exit_to_app_24.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\release\\drawable-xxxhdpi\\ic_baseline_exit_to_app_24.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\menu_options_menu.xml.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\menu\\options_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-v24_purple_bg.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\drawable-v24\\purple_bg.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\release\\drawable-hdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxxhdpi_ic_baseline_warning_24.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\release\\drawable-xxxhdpi\\ic_baseline_warning_24.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi_ic_baseline_exit_to_app_24.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\release\\drawable-xxhdpi\\ic_baseline_exit_to_app_24.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\font_montserrat.ttf.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\font\\montserrat.ttf"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-v24_senseit_logo.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\drawable-v24\\senseit_logo.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxxhdpi_ic_baseline_menu_open_24.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\release\\drawable-xxxhdpi\\ic_baseline_menu_open_24.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-v24_orange_bg.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\drawable-v24\\orange_bg.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-anydpi-v21_ic_baseline_warning_24.xml.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\release\\drawable-anydpi-v21\\ic_baseline_warning_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\release\\drawable-xxhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-v24_light_icon.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\drawable-v24\\light_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable_history_listview_bg.xml.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\drawable\\history_listview_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable_history_column2_shape.xml.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\drawable\\history_column2_shape.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\release\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\layout_activity_history.xml.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\layout\\activity_history.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-v24_gyroscope_icon.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\drawable-v24\\gyroscope_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-anydpi-v21_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\release\\drawable-anydpi-v21\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi_ic_baseline_warning_24.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\release\\drawable-hdpi\\ic_baseline_warning_24.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxxhdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\release\\drawable-xxxhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_ic_baseline_menu_open_24.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\release\\drawable-mdpi\\ic_baseline_menu_open_24.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi_ic_baseline_warning_24.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\release\\drawable-xxhdpi\\ic_baseline_warning_24.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-v24_green_bg.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\drawable-v24\\green_bg.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-v24_bg1.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\drawable-v24\\bg1.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_ic_baseline_warning_24.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\release\\drawable-xhdpi\\ic_baseline_warning_24.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-anydpi-v21_ic_baseline_exit_to_app_24.xml.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\release\\drawable-anydpi-v21\\ic_baseline_exit_to_app_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_ic_baseline_menu_open_24.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\release\\drawable-xhdpi\\ic_baseline_menu_open_24.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-v24_accelerometer_icon.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\drawable-v24\\accelerometer_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\release\\drawable-mdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-ldpi_ic_baseline_warning_24.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\release\\drawable-ldpi\\ic_baseline_warning_24.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-v24_proximity_icon.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\drawable-v24\\proximity_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-ldpi_ic_baseline_exit_to_app_24.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\release\\drawable-ldpi\\ic_baseline_exit_to_app_24.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-v24_pink_bg.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\drawable-v24\\pink_bg.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi_ic_baseline_exit_to_app_24.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\release\\drawable-hdpi\\ic_baseline_exit_to_app_24.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_ic_baseline_exit_to_app_24.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\release\\drawable-xhdpi\\ic_baseline_exit_to_app_24.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi_ic_baseline_menu_open_24.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\release\\drawable-xxhdpi\\ic_baseline_menu_open_24.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-ldpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\release\\drawable-ldpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable_history_column1_shape.xml.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\drawable\\history_column1_shape.xml"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-v24_yellow_bg.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\src\\main\\res\\drawable-v24\\yellow_bg.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi_ic_baseline_menu_open_24.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\release\\drawable-hdpi\\ic_baseline_menu_open_24.png"
+    },
+    {
+        "merged": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\intermediates\\res\\merged\\release\\drawable-ldpi_ic_baseline_menu_open_24.png.flat",
+        "source": "C:\\Users\\Anik Islam\\AndroidStudioProjects\\senseit\\app\\build\\generated\\res\\pngs\\release\\drawable-ldpi\\ic_baseline_menu_open_24.png"
+    }
+]
