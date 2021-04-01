@@ -1,11 +1,13 @@
 package com.example.senseit;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import android.annotation.SuppressLint;
 import android.app.Service;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -87,12 +89,21 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
+    protected void onStart() {
+        super.onStart();
         sensorManager.registerListener(this, light_sensor, SensorManager.SENSOR_DELAY_NORMAL);
         sensorManager.registerListener(this, proximity_sensor, SensorManager.SENSOR_DELAY_NORMAL);
         sensorManager.registerListener(this, accelerometer_sensor, SensorManager.SENSOR_DELAY_NORMAL);
         sensorManager.registerListener(this, gyroscope_sensor, SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        /*sensorManager.registerListener(this, light_sensor, SensorManager.SENSOR_DELAY_NORMAL);
+        sensorManager.registerListener(this, proximity_sensor, SensorManager.SENSOR_DELAY_NORMAL);
+        sensorManager.registerListener(this, accelerometer_sensor, SensorManager.SENSOR_DELAY_NORMAL);
+        sensorManager.registerListener(this, gyroscope_sensor, SensorManager.SENSOR_DELAY_NORMAL);*/
     }
 
     @SuppressLint({"DefaultLocale", "SetTextI18n"})
@@ -159,6 +170,21 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                     startForegroundService(serviceIntent);
                 }
                 return true;
+            case R.id.exit:
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage("Are you sure you want to exit?")
+                        .setNegativeButton("No", null)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                sensorManager.unregisterListener(MainActivity.this);
+                                sensorManager.unregisterListener(MainActivity.this);
+                                sensorManager.unregisterListener(MainActivity.this);
+                                sensorManager.unregisterListener(MainActivity.this);
+                                finishAffinity();
+                            }
+                        }).show();
+
         }
         return true;
     }

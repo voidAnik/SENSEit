@@ -2,6 +2,7 @@ package com.example.senseit;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
@@ -26,7 +27,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String VALUE_Y= "value_y";
     private static final String VALUE_Z= "value_z";
 
-    //SQL
+    //SQL Commands
     private static final String CREATE_TABLE = "CREATE TABLE "+TABLE_NAME+"( "+ID+" INTEGER PRIMARY KEY AUTOINCREMENT, "
                                                 +SENSOR_ID+" INTEGER, "
                                                 +TIME+" TIME, "
@@ -35,6 +36,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                                                 +VALUE_Z+" DOUBLE ); "; // SQL command for creating table
 
     private static final String DROP_TABLE = "DROP TABLE IF EXISTS "+TABLE_NAME; // SQL command for drop table
+    private static final String SELECT_ALL = "SELECT * FROM "+TABLE_NAME;
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, VERSION_NUMBER);
@@ -95,5 +97,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         row_ids[3] = sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
 
         return row_ids;
+    }
+
+    public Cursor getAllData(){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        return sqLiteDatabase.rawQuery(SELECT_ALL, null);
     }
 }

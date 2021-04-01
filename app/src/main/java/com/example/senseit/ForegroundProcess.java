@@ -36,10 +36,10 @@ public class ForegroundProcess extends Service implements SensorEventListener {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
-        sensorManager.registerListener(this, light_sensor, SensorManager.SENSOR_DELAY_NORMAL);
-        sensorManager.registerListener(this, proximity_sensor, SensorManager.SENSOR_DELAY_NORMAL);
-        sensorManager.registerListener(this, accelerometer_sensor, SensorManager.SENSOR_DELAY_NORMAL);
-        sensorManager.registerListener(this, gyroscope_sensor, SensorManager.SENSOR_DELAY_NORMAL);
+        sensorManager.registerListener(this, light_sensor, SensorManager.SENSOR_DELAY_FASTEST);
+        sensorManager.registerListener(this, proximity_sensor, SensorManager.SENSOR_DELAY_FASTEST);
+        sensorManager.registerListener(this, accelerometer_sensor, SensorManager.SENSOR_DELAY_FASTEST);
+        sensorManager.registerListener(this, gyroscope_sensor, SensorManager.SENSOR_DELAY_FASTEST);
 
         sensor_values =(SensorValue) intent.getSerializableExtra("sensor_values");
         aBoolean = intent.getBooleanExtra("bool", true);
@@ -49,7 +49,7 @@ public class ForegroundProcess extends Service implements SensorEventListener {
         Notification notification = createNotification();
 
         final Handler handler = new Handler(); // handler to save the sensor data to database every 5 minute
-        final int delay = 10000; // 1000 milliseconds == 1 second
+        final int delay =60000; // 1000 milliseconds == 1 second
 
         handler.postDelayed(new Runnable() {
             public void run() {
@@ -63,6 +63,7 @@ public class ForegroundProcess extends Service implements SensorEventListener {
         }
         else {
             stopForeground(true); // Stops foreground service for a button click on mainActivity
+            sensorManager.unregisterListener(this);
         }
         return START_STICKY;
     }
@@ -83,6 +84,8 @@ public class ForegroundProcess extends Service implements SensorEventListener {
         if(sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE)!=null) {
             gyroscope_sensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
         }
+
+
 
         //Database related
         databaseHelper = new DatabaseHelper(this);
@@ -110,8 +113,8 @@ public class ForegroundProcess extends Service implements SensorEventListener {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        //stopForeground(true);
-        //startForeground(1, createNotification());
+        /*stopForeground(true);
+        sensorManager.unregisterListener(this);*/
     }
 
     @Nullable
@@ -145,6 +148,7 @@ public class ForegroundProcess extends Service implements SensorEventListener {
         }
         else {
             stopForeground(true);
+            sensorManager.unregisterListener(this);
         }
     }
 
