@@ -1157,6 +1157,7 @@ color tooltip_background_dark
 color tooltip_background_light
 color tr_red
 color white
+color white0
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -1636,7 +1637,6 @@ drawable abc_vector_test
 drawable accelerometer_icon
 drawable avd_hide_password
 drawable avd_show_password
-drawable bg1
 drawable blue_bg
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
