@@ -11,7 +11,7 @@
     <string name="not_available_proxy">Proximity sensor is not available</string>
     <string name="not_available_accelerometer">Accelerometer sensor is not available</string>
     <string name="not_available_gyro">Gyroscope sensor is not available</string>
-    <string name="stop_service">STOP SERVICE</string>
+    <string name="stop_service">STOP NOTIFY SERVICE</string>
     <string name="sample_text">Sample text</string>
     <string name="time_stamp">TIME STAMP</string>
     <string name="sensor_values">SENSOR VALUES</string>

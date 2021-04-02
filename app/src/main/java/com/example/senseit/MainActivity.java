@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     //Customs
     Boolean goingHistory;
+    Boolean serviceStopped;
 
     @SuppressLint("BatteryLife")
     @Override
@@ -103,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             gyro_value.setText(R.string.not_available_gyro);
         }
 
-        handler = new Handler(); // handler to save the sensor data to database every 5 minute
+        /*handler = new Handler(); // handler to save the sensor data to database every 5 minute
         final int delay =300000; // 1000 milliseconds == 1 second
         handler.postDelayed(new Runnable() {
             public void run() {
@@ -111,14 +112,14 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 new ForegroundProcess().save_data(sensor_values);
                 handler.postDelayed(this, delay);
             }
-        }, delay);
+        }, delay);*/
 
 
     }
 
     @Override
     protected void onPause() {
-        if(!goingHistory) {
+        if(!goingHistory && !serviceStopped) {
             // Starting the foreground services with the live notification
             Intent serviceIntent = new Intent(this, ForegroundProcess.class);
             serviceIntent.putExtra("sensor_values", sensor_values);
@@ -145,6 +146,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     protected void onResume() {
         goingHistory = false;
+        serviceStopped = false;
         Intent serviceIntent = new Intent(this, ForegroundProcess.class);
         serviceIntent.putExtra("sensor_values", sensor_values);
         serviceIntent.putExtra("bool", false);
@@ -203,14 +205,18 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.stop_fg: // Menu button to stop the foreground service
-                Intent serviceIntent = new Intent(this, ForegroundProcess.class);
-                serviceIntent.putExtra("sensor_values", sensor_values);
-                serviceIntent.putExtra("bool", false);
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    Toast.makeText(this, Html.fromHtml("<font color='"+ Color.RED +"' >" + "SERVICE STOPPED!" + "</font>"), Toast.LENGTH_SHORT).show();
-                    startForegroundService(serviceIntent);
+                if(!serviceStopped){
+                    Toast.makeText(this, Html.fromHtml("<font color='"+ Color.RED +"' >" + "Background Notification Service Stopped!" + "</font>"), Toast.LENGTH_SHORT).show();
+                    item.setTitle("START NOTIFY SERVICE");
+                    item.setIcon(R.drawable.ic_baseline_circle_24);
+                    serviceStopped = true;
+                }else {
+                    serviceStopped = false;
+                    item.setTitle("STOP NOTIFY SERVICE");
+                    item.setIcon(R.drawable.ic_baseline_warning_24_red);
+                    Toast.makeText(this, Html.fromHtml("<font color='"+ getResources().getColor(R.color.dark_yellow) +"' >" + "Background Notification Service Started!" + "</font>"), Toast.LENGTH_SHORT).show();
                 }
-                return true;
+                break;
             case R.id.exit: // To exit the application
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setMessage("Are you sure you want to exit?")
@@ -222,9 +228,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                                 finishAffinity();
                             }
                         }).show();
+                break;
 
         }
-        return true;
+      return true;
     }
 
     @SuppressLint("NonConstantResourceId")

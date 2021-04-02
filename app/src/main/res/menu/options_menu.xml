@@ -9,7 +9,7 @@
         <item android:id="@+id/stop_fg"
             android:title="@string/stop_service"
             app:showAsAction="ifRoom"
-            android:icon="@drawable/ic_baseline_warning_24"/>
+            android:icon="@drawable/ic_baseline_warning_24_red"/>
             <item android:id="@+id/exit"
                 android:title="EXIT"
                 android:icon="@drawable/ic_baseline_exit_to_app_24"/>

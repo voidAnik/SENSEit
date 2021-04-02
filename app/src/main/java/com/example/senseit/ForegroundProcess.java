@@ -37,6 +37,7 @@ public class ForegroundProcess extends Service implements SensorEventListener {
     PendingIntent pendingIntent;
     Handler handler;
     PowerManager.WakeLock wakeLock;
+    Runnable runnable;
 
     //Sensor variables
     SensorManager sensorManager;
@@ -69,6 +70,7 @@ public class ForegroundProcess extends Service implements SensorEventListener {
         else {
             stopForeground(true); // Stops foreground service for a button click on mainActivity
             sensorManager.unregisterListener(this);
+            handler.removeCallbacks(runnable);
         }
         return START_NOT_STICKY;
     }
@@ -105,12 +107,13 @@ public class ForegroundProcess extends Service implements SensorEventListener {
 
         handler = new Handler(); // handler to save the sensor data to database every 5 minute
         final int delay =300000; // 1000 milliseconds == 1 second
-        handler.postDelayed(new Runnable() {
+        runnable = new Runnable() {
             public void run() {
                 save_data(sensor_values);
                 handler.postDelayed(this, delay);
             }
-        }, delay);
+        };
+        handler.postDelayed(runnable,delay);
     }
 
     private Notification createNotification() {
@@ -180,6 +183,8 @@ public class ForegroundProcess extends Service implements SensorEventListener {
         else {
             stopForeground(true);
             sensorManager.unregisterListener(this);
+            wakeLock.release();
+            handler.removeCallbacks(runnable);
         }
     }
 
