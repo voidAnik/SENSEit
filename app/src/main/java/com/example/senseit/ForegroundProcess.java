@@ -6,12 +6,18 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
+import android.os.PowerManager;
+import android.provider.Settings;
+import android.text.Html;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -66,6 +72,7 @@ public class ForegroundProcess extends Service implements SensorEventListener {
     public void onCreate() {
         super.onCreate();
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
         sensorManager = (SensorManager) getSystemService(Service.SENSOR_SERVICE);
         if(sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT)!=null) {
             light_sensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
@@ -90,7 +97,6 @@ public class ForegroundProcess extends Service implements SensorEventListener {
         handler.postDelayed(new Runnable() {
             public void run() {
                 save_data(sensor_values);
-                //Toast.makeText(ForegroundProcess.this, "Saved data", Toast.LENGTH_SHORT).show();
                 handler.postDelayed(this, delay);
             }
         }, delay);
@@ -154,6 +160,7 @@ public class ForegroundProcess extends Service implements SensorEventListener {
             startForeground(NOTIFICATION_ID, createNotification());
         }
         else {
+            Toast.makeText(this, Html.fromHtml("<font color='"+ Color.RED +"' >" + "SERVICE STOPPED!" + "</font>"), Toast.LENGTH_SHORT).show();
             stopForeground(true);
             sensorManager.unregisterListener(this);
         }
@@ -162,6 +169,12 @@ public class ForegroundProcess extends Service implements SensorEventListener {
     private void save_data(SensorValue sensor_values) { // Saving the data to Database
         long[] row_ids = databaseHelper.insertData(sensor_values);
 
+        for (long row_id : row_ids) { // Checking for error when inserting data as its returns -1 when gives an error otherwise the row number
+            if (row_id == -1) {
+                Toast.makeText(this, Html.fromHtml("<font color='" + Color.RED + "' >" + "ERROR INSERTION!" + "</font>"), Toast.LENGTH_SHORT).show();
+                break;
+            }
+        }
         //Toast.makeText(this, ""+ Arrays.toString(row_ids), Toast.LENGTH_SHORT).show();
     }
 

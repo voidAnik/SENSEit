@@ -1,6 +1,7 @@
 package com.example.senseit;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,9 +41,15 @@ public class CustomAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
         if(convertView == null){
            inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
            convertView = inflater.inflate(R.layout.listview_history, parent, false);
+        }
+        if (position % 2 == 1) {
+            convertView.setBackgroundColor(Color.parseColor("#ebebef"));
+        } else {
+            convertView.setBackgroundColor(Color.parseColor("#e5e5ea"));
         }
         TextView column1_view = (TextView) convertView.findViewById(R.id.column1);
         TextView column2_view = (TextView) convertView.findViewById(R.id.column2);

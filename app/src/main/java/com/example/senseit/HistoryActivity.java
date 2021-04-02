@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Html;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.view.Menu;
@@ -125,7 +126,7 @@ public class HistoryActivity extends AppCompatActivity {
                                 CustomAdapter adapter = new CustomAdapter(HistoryActivity.this, column1, column2);
                                 listView.setAdapter(adapter);
                             }else {
-                                Toast.makeText(HistoryActivity.this, "ERROR OCCURRED!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(HistoryActivity.this, Html.fromHtml("<font color='"+ Color.RED +"' >" + "NO DATA FOUND!" + "</font>"), Toast.LENGTH_SHORT).show();
                             }
                         }
                     }).show();

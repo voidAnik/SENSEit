@@ -24,6 +24,7 @@
         android:textStyle="bold"
         android:textSize="17sp"
         android:text="@string/sample_text"
+        android:textColor="@color/tr_red"
         android:gravity="center"/>
 
 

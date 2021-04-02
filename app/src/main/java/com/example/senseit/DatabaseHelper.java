@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.graphics.Color;
+import android.text.Html;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
@@ -54,7 +56,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         try {
-            Toast.makeText(context, "WELCOME!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, Html.fromHtml("<font color='"+ Color.YELLOW +"' >" + "WELCOME" + "</font>"), Toast.LENGTH_SHORT).show();
             db.execSQL(CREATE_TABLE); // Creating table for the database
         }catch (Exception e){
             Toast.makeText(context, "Exception:" + e, Toast.LENGTH_SHORT).show();
