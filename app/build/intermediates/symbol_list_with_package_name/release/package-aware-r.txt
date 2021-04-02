@@ -1035,6 +1035,7 @@ color highlighted_text_material_light
 color ic_launcher_background
 color light_white
 color light_white2
+color light_white3
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -1154,7 +1155,9 @@ color test_mtrl_calendar_day
 color test_mtrl_calendar_day_selected
 color tooltip_background_dark
 color tooltip_background_light
+color tr_red
 color white
+color white0
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -1634,7 +1637,6 @@ drawable abc_vector_test
 drawable accelerometer_icon
 drawable avd_hide_password
 drawable avd_show_password
-drawable bg1
 drawable blue_bg
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
@@ -1655,9 +1657,12 @@ drawable gyroscope_icon
 drawable history_column1_shape
 drawable history_column2_shape
 drawable history_listview_bg
+drawable ic_baseline_cancel_24
+drawable ic_baseline_circle_24
 drawable ic_baseline_exit_to_app_24
 drawable ic_baseline_menu_open_24
 drawable ic_baseline_warning_24
+drawable ic_baseline_warning_24_red
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
