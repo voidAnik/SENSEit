@@ -29,7 +29,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.senseit.HistoryActivity" />
         </activity>
-        <activity android:name="com.example.senseit.MainActivity" >
+        <activity
+            android:name="com.example.senseit.MainActivity"
+            android:excludeFromRecents="true"
+            android:taskAffinity="" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

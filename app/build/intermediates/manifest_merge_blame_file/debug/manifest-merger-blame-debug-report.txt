@@ -18,7 +18,7 @@
 12-->C:\Users\Anik Islam\AndroidStudioProjects\senseit\app\src\main\AndroidManifest.xml:6:22-92
 13
 14    <application
-14-->C:\Users\Anik Islam\AndroidStudioProjects\senseit\app\src\main\AndroidManifest.xml:8:5-32:19
+14-->C:\Users\Anik Islam\AndroidStudioProjects\senseit\app\src\main\AndroidManifest.xml:8:5-35:19
 15        android:name="com.example.senseit.Globe"
 15-->C:\Users\Anik Islam\AndroidStudioProjects\senseit\app\src\main\AndroidManifest.xml:9:9-30
 16        android:allowBackup="true"
@@ -50,24 +50,29 @@
 30                android:value="com.example.senseit.HistoryActivity" />
 30-->C:\Users\Anik Islam\AndroidStudioProjects\senseit\app\src\main\AndroidManifest.xml:20:17-68
 31        </activity>
-32        <activity android:name="com.example.senseit.MainActivity" >
-32-->C:\Users\Anik Islam\AndroidStudioProjects\senseit\app\src\main\AndroidManifest.xml:22:9-28:20
-32-->C:\Users\Anik Islam\AndroidStudioProjects\senseit\app\src\main\AndroidManifest.xml:22:19-47
-33            <intent-filter>
-33-->C:\Users\Anik Islam\AndroidStudioProjects\senseit\app\src\main\AndroidManifest.xml:23:13-27:29
-34                <action android:name="android.intent.action.MAIN" />
-34-->C:\Users\Anik Islam\AndroidStudioProjects\senseit\app\src\main\AndroidManifest.xml:24:17-69
-34-->C:\Users\Anik Islam\AndroidStudioProjects\senseit\app\src\main\AndroidManifest.xml:24:25-66
-35
-36                <category android:name="android.intent.category.LAUNCHER" />
-36-->C:\Users\Anik Islam\AndroidStudioProjects\senseit\app\src\main\AndroidManifest.xml:26:17-77
-36-->C:\Users\Anik Islam\AndroidStudioProjects\senseit\app\src\main\AndroidManifest.xml:26:27-74
-37            </intent-filter>
-38        </activity>
-39
-40        <service android:name="com.example.senseit.ForegroundProcess" />
-40-->C:\Users\Anik Islam\AndroidStudioProjects\senseit\app\src\main\AndroidManifest.xml:31:9-54
-40-->C:\Users\Anik Islam\AndroidStudioProjects\senseit\app\src\main\AndroidManifest.xml:31:18-51
-41    </application>
+32        <activity
+32-->C:\Users\Anik Islam\AndroidStudioProjects\senseit\app\src\main\AndroidManifest.xml:22:9-31:20
+33            android:name="com.example.senseit.MainActivity"
+33-->C:\Users\Anik Islam\AndroidStudioProjects\senseit\app\src\main\AndroidManifest.xml:22:19-47
+34            android:excludeFromRecents="true"
+34-->C:\Users\Anik Islam\AndroidStudioProjects\senseit\app\src\main\AndroidManifest.xml:24:13-46
+35            android:taskAffinity="" >
+35-->C:\Users\Anik Islam\AndroidStudioProjects\senseit\app\src\main\AndroidManifest.xml:23:13-36
+36            <intent-filter>
+36-->C:\Users\Anik Islam\AndroidStudioProjects\senseit\app\src\main\AndroidManifest.xml:26:13-30:29
+37                <action android:name="android.intent.action.MAIN" />
+37-->C:\Users\Anik Islam\AndroidStudioProjects\senseit\app\src\main\AndroidManifest.xml:27:17-69
+37-->C:\Users\Anik Islam\AndroidStudioProjects\senseit\app\src\main\AndroidManifest.xml:27:25-66
+38
+39                <category android:name="android.intent.category.LAUNCHER" />
+39-->C:\Users\Anik Islam\AndroidStudioProjects\senseit\app\src\main\AndroidManifest.xml:29:17-77
+39-->C:\Users\Anik Islam\AndroidStudioProjects\senseit\app\src\main\AndroidManifest.xml:29:27-74
+40            </intent-filter>
+41        </activity>
 42
-43</manifest>
+43        <service android:name="com.example.senseit.ForegroundProcess" />
+43-->C:\Users\Anik Islam\AndroidStudioProjects\senseit\app\src\main\AndroidManifest.xml:34:9-54
+43-->C:\Users\Anik Islam\AndroidStudioProjects\senseit\app\src\main\AndroidManifest.xml:34:18-51
+44    </application>
+45
+46</manifest>

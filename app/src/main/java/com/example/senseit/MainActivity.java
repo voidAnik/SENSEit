@@ -109,7 +109,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     protected void onPause() {
         super.onPause();
-        //sensorManager.unregisterListener(this);
     }
 
     @Override
@@ -125,10 +124,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     protected void onResume() {
         super.onResume();
-        /*sensorManager.registerListener(this, light_sensor, SensorManager.SENSOR_DELAY_NORMAL);
-        sensorManager.registerListener(this, proximity_sensor, SensorManager.SENSOR_DELAY_NORMAL);
-        sensorManager.registerListener(this, accelerometer_sensor, SensorManager.SENSOR_DELAY_NORMAL);
-        sensorManager.registerListener(this, gyroscope_sensor, SensorManager.SENSOR_DELAY_NORMAL);*/
     }
 
     @SuppressLint({"DefaultLocale", "SetTextI18n"})
@@ -205,9 +200,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                sensorManager.unregisterListener(MainActivity.this);
-                                sensorManager.unregisterListener(MainActivity.this);
-                                sensorManager.unregisterListener(MainActivity.this);
                                 sensorManager.unregisterListener(MainActivity.this);
                                 finishAffinity();
                             }

@@ -2,8 +2,10 @@ package com.example.senseit;
 
 import android.annotation.SuppressLint;
 import android.app.Notification;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -21,6 +23,7 @@ import android.text.Html;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.NotificationCompat;
 
@@ -32,6 +35,7 @@ public class ForegroundProcess extends Service implements SensorEventListener {
     SensorValue sensor_values;
     public Boolean aBoolean;
     PendingIntent pendingIntent;
+    Handler handler;
 
     //Sensor variables
     SensorManager sensorManager;
@@ -53,8 +57,9 @@ public class ForegroundProcess extends Service implements SensorEventListener {
         sensor_values =(SensorValue) intent.getSerializableExtra("sensor_values");
         aBoolean = intent.getBooleanExtra("bool", true);
         Intent notifyIntent = new Intent(this, MainActivity.class);
-        pendingIntent = PendingIntent.getActivity(this, 0, notifyIntent, 0);
-        //NotificationCompat.Builder nBuilder =
+        notifyIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        pendingIntent = PendingIntent.getActivity(this, 11, notifyIntent, PendingIntent.FLAG_CANCEL_CURRENT);
         Notification notification = createNotification();
 
 
@@ -62,10 +67,11 @@ public class ForegroundProcess extends Service implements SensorEventListener {
             startForeground(NOTIFICATION_ID, notification);
         }
         else {
+            Toast.makeText(this, Html.fromHtml("<font color='"+ Color.RED +"' >" + "SERVICE STOPPED!" + "</font>"), Toast.LENGTH_SHORT).show();
             stopForeground(true); // Stops foreground service for a button click on mainActivity
             sensorManager.unregisterListener(this);
         }
-        return START_STICKY;
+        return START_NOT_STICKY;
     }
 
     @Override
@@ -92,7 +98,7 @@ public class ForegroundProcess extends Service implements SensorEventListener {
         databaseHelper = new DatabaseHelper(this);
         SQLiteDatabase sqLiteDatabase = databaseHelper.getWritableDatabase();
 
-        final Handler handler = new Handler(); // handler to save the sensor data to database every 5 minute
+        handler = new Handler(); // handler to save the sensor data to database every 5 minute
         final int delay =300000; // 1000 milliseconds == 1 second
         handler.postDelayed(new Runnable() {
             public void run() {
@@ -136,6 +142,7 @@ public class ForegroundProcess extends Service implements SensorEventListener {
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @SuppressLint("DefaultLocale")
     @Override
     public void onSensorChanged(SensorEvent event) {
@@ -156,8 +163,11 @@ public class ForegroundProcess extends Service implements SensorEventListener {
             sensor_values.gyro_value[2] = Double.parseDouble(String.format("%.2f",event.values[2]));
         }
 
+        NotificationManager notificationManager = (NotificationManager)
+                getSystemService(Context.NOTIFICATION_SERVICE);
         if(aBoolean) {
-            startForeground(NOTIFICATION_ID, createNotification());
+            //startForeground(NOTIFICATION_ID, createNotification());
+            notificationManager.notify(NOTIFICATION_ID, createNotification());
         }
         else {
             Toast.makeText(this, Html.fromHtml("<font color='"+ Color.RED +"' >" + "SERVICE STOPPED!" + "</font>"), Toast.LENGTH_SHORT).show();
@@ -182,4 +192,5 @@ public class ForegroundProcess extends Service implements SensorEventListener {
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
     }
+
 }
