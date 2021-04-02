@@ -36,6 +36,7 @@ public class ForegroundProcess extends Service implements SensorEventListener {
     public Boolean aBoolean;
     PendingIntent pendingIntent;
     Handler handler;
+    PowerManager.WakeLock wakeLock;
 
     //Sensor variables
     SensorManager sensorManager;
@@ -59,15 +60,13 @@ public class ForegroundProcess extends Service implements SensorEventListener {
         Intent notifyIntent = new Intent(this, MainActivity.class);
         notifyIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
                 | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        pendingIntent = PendingIntent.getActivity(this, 11, notifyIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+        pendingIntent = PendingIntent.getActivity(this, 11, notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         Notification notification = createNotification();
-
 
         if(aBoolean) {
             startForeground(NOTIFICATION_ID, notification);
         }
         else {
-            Toast.makeText(this, Html.fromHtml("<font color='"+ Color.RED +"' >" + "SERVICE STOPPED!" + "</font>"), Toast.LENGTH_SHORT).show();
             stopForeground(true); // Stops foreground service for a button click on mainActivity
             sensorManager.unregisterListener(this);
         }
@@ -78,6 +77,12 @@ public class ForegroundProcess extends Service implements SensorEventListener {
     public void onCreate() {
         super.onCreate();
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
+        // Creating a wake lock service
+        PowerManager powerManager = (PowerManager) getSystemService(POWER_SERVICE);
+        wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
+                "SENSEit::WakelockTag");
+        wakeLock.acquire();
 
         sensorManager = (SensorManager) getSystemService(Service.SENSOR_SERVICE);
         if(sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT)!=null) {
@@ -119,12 +124,14 @@ public class ForegroundProcess extends Service implements SensorEventListener {
                         .bigText("Light sensor value: " + sensor_values.light_value
                                 + "\nProximity sensor value: " + sensor_values.proxy_value
                                 +"\nAccelerometer sensor values: X:" +sensor_values.accelerometer_value[0]+" Y:"+sensor_values.accelerometer_value[1]+" Z:"+sensor_values.accelerometer_value[2]
-                                +"\nGyroscope sensor values: X:" +sensor_values.gyro_value[0]+" Y:"+sensor_values.accelerometer_value[1]+" Z:"+sensor_values.accelerometer_value[2]))
+                                +"\nGyroscope sensor values: X:" +sensor_values.gyro_value[0]+" Y:"+sensor_values.gyro_value[1]+" Z:"+sensor_values.gyro_value[2]))
                 .setAutoCancel(false)
                 .setOngoing(true)
+                .setWhen(System.currentTimeMillis())
                 .setContentIntent(pendingIntent)
                 .setOnlyAlertOnce(true)
-                .setPriority(NotificationCompat.PRIORITY_LOW)
+                .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
+                .setPriority(NotificationCompat.PRIORITY_MAX)
                 .build();
     }
 
@@ -133,6 +140,7 @@ public class ForegroundProcess extends Service implements SensorEventListener {
         super.onDestroy();
         sensorManager.unregisterListener(this);
         stopForeground(true);
+        wakeLock.release();
     }
 
     @Nullable
@@ -170,7 +178,6 @@ public class ForegroundProcess extends Service implements SensorEventListener {
             notificationManager.notify(NOTIFICATION_ID, createNotification());
         }
         else {
-            Toast.makeText(this, Html.fromHtml("<font color='"+ Color.RED +"' >" + "SERVICE STOPPED!" + "</font>"), Toast.LENGTH_SHORT).show();
             stopForeground(true);
             sensorManager.unregisterListener(this);
         }

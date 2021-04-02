@@ -10,6 +10,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.SpannableString;
@@ -37,8 +38,8 @@ public class HistoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.activity_history);
-        Objects.requireNonNull(getSupportActionBar()).setTitle("HISTORY");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setTitle("HISTORY"); // Changing title name
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // Back to home option enabled
 
         //Bindings
         listView = findViewById(R.id.l_view);
@@ -75,7 +76,7 @@ public class HistoryActivity extends AppCompatActivity {
         }
 
 
-        if (results.getCount() == 0) {
+        if (results.getCount() == 0) { // Add data to listView
             Toast.makeText(this, "No Data Available for this sensor!", Toast.LENGTH_SHORT).show();
         } else {
             if (id == 1 || id == 2) {

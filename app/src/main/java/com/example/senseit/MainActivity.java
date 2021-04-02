@@ -9,6 +9,7 @@ import android.annotation.SuppressLint;
 import android.app.Service;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -18,6 +19,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.provider.Settings;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -35,6 +37,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     SensorManager sensorManager;
     Sensor light_sensor, proximity_sensor, accelerometer_sensor, gyroscope_sensor;
     SensorValue sensor_values;
+
+    //Customs
+    Boolean goingHistory;
 
     @SuppressLint("BatteryLife")
     @Override
@@ -96,19 +101,23 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             gyro_value.setText(R.string.not_available_gyro);
         }
 
-        // Starting the foreground services with the live notification
-        Intent serviceIntent = new Intent(this, ForegroundProcess.class);
-        serviceIntent.putExtra("sensor_values", sensor_values);
-        serviceIntent.putExtra("bool", true);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            startForegroundService(serviceIntent);
-        }
 
     }
 
     @Override
     protected void onPause() {
+        if(!goingHistory) {
+            Toast.makeText(this, "onPause", Toast.LENGTH_SHORT).show();
+            // Starting the foreground services with the live notification
+            Intent serviceIntent = new Intent(this, ForegroundProcess.class);
+            serviceIntent.putExtra("sensor_values", sensor_values);
+            serviceIntent.putExtra("bool", true);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                startForegroundService(serviceIntent);
+            }
+        }
         super.onPause();
+
     }
 
     @Override
@@ -123,6 +132,13 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     @Override
     protected void onResume() {
+        goingHistory = false;
+        Intent serviceIntent = new Intent(this, ForegroundProcess.class);
+        serviceIntent.putExtra("sensor_values", sensor_values);
+        serviceIntent.putExtra("bool", false);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            startForegroundService(serviceIntent);
+        }
         super.onResume();
     }
 
@@ -172,6 +188,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     protected void onDestroy() {
         super.onDestroy();
         sensorManager.unregisterListener(this); // unregister the sensors on destroy
+
     }
 
     @Override
@@ -190,6 +207,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 serviceIntent.putExtra("sensor_values", sensor_values);
                 serviceIntent.putExtra("bool", false);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    Toast.makeText(this, Html.fromHtml("<font color='"+ Color.RED +"' >" + "SERVICE STOPPED!" + "</font>"), Toast.LENGTH_SHORT).show();
                     startForegroundService(serviceIntent);
                 }
                 return true;
@@ -235,6 +253,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private void goToHistory(int id) {
 
         // To history activity
+        goingHistory = true;
         Intent history_intent = new Intent(MainActivity.this, HistoryActivity.class);
         history_intent.putExtra("sensor_id", id);
         startActivity(history_intent);

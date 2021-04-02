@@ -1657,6 +1657,7 @@ drawable gyroscope_icon
 drawable history_column1_shape
 drawable history_column2_shape
 drawable history_listview_bg
+drawable ic_baseline_cancel_24
 drawable ic_baseline_exit_to_app_24
 drawable ic_baseline_menu_open_24
 drawable ic_baseline_warning_24
