@@ -183,7 +183,7 @@ public class ForegroundProcess extends Service implements SensorEventListener {
         }
     }
 
-    private void save_data(SensorValue sensor_values) { // Saving the data to Database
+    public void save_data(SensorValue sensor_values) { // Saving the data to Database
         long[] row_ids = databaseHelper.insertData(sensor_values);
 
         for (long row_id : row_ids) { // Checking for error when inserting data as its returns -1 when gives an error otherwise the row number

@@ -24,6 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Objects;
 
 public class HistoryActivity extends AppCompatActivity {
@@ -91,6 +92,8 @@ public class HistoryActivity extends AppCompatActivity {
                 }
             }
         }
+        Collections.reverse(column1);
+        Collections.reverse(column2);
 
         CustomAdapter adapter = new CustomAdapter(this, column1, column2);
         listView.setAdapter(adapter);

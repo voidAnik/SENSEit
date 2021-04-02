@@ -17,6 +17,7 @@ import android.hardware.SensorManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.PowerManager;
 import android.provider.Settings;
 import android.text.Html;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     SensorManager sensorManager;
     Sensor light_sensor, proximity_sensor, accelerometer_sensor, gyroscope_sensor;
     SensorValue sensor_values;
+    Handler handler;
 
     //Customs
     Boolean goingHistory;
@@ -100,6 +102,16 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         }else{
             gyro_value.setText(R.string.not_available_gyro);
         }
+
+        handler = new Handler(); // handler to save the sensor data to database every 5 minute
+        final int delay =300000; // 1000 milliseconds == 1 second
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                //long[] row_ids = new DatabaseHelper(MainActivity.this).insertData(sensor_values);
+                new ForegroundProcess().save_data(sensor_values);
+                handler.postDelayed(this, delay);
+            }
+        }, delay);
 
 
     }
