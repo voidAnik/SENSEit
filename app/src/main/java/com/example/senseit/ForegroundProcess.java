@@ -50,10 +50,10 @@ public class ForegroundProcess extends Service implements SensorEventListener {
     public int onStartCommand(Intent intent, int flags, int startId) {
 
         // registering the sensors
-        sensorManager.registerListener(this, light_sensor, SensorManager.SENSOR_DELAY_FASTEST);
-        sensorManager.registerListener(this, proximity_sensor, SensorManager.SENSOR_DELAY_FASTEST);
-        sensorManager.registerListener(this, accelerometer_sensor, SensorManager.SENSOR_DELAY_FASTEST);
-        sensorManager.registerListener(this, gyroscope_sensor, SensorManager.SENSOR_DELAY_FASTEST);
+        sensorManager.registerListener(this, light_sensor, SensorManager.SENSOR_DELAY_NORMAL);
+        sensorManager.registerListener(this, proximity_sensor, SensorManager.SENSOR_DELAY_NORMAL);
+        sensorManager.registerListener(this, accelerometer_sensor, SensorManager.SENSOR_DELAY_NORMAL);
+        sensorManager.registerListener(this, gyroscope_sensor, SensorManager.SENSOR_DELAY_NORMAL);
 
         sensor_values =(SensorValue) intent.getSerializableExtra("sensor_values");
         aBoolean = intent.getBooleanExtra("bool", true);
@@ -82,7 +82,7 @@ public class ForegroundProcess extends Service implements SensorEventListener {
         PowerManager powerManager = (PowerManager) getSystemService(POWER_SERVICE);
         wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
                 "SENSEit::WakelockTag");
-        wakeLock.acquire();
+        wakeLock.acquire(10*60*1000L /*10 minutes*/);
 
         sensorManager = (SensorManager) getSystemService(Service.SENSOR_SERVICE);
         if(sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT)!=null) {

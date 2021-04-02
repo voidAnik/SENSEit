@@ -107,7 +107,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     protected void onPause() {
         if(!goingHistory) {
-            Toast.makeText(this, "onPause", Toast.LENGTH_SHORT).show();
             // Starting the foreground services with the live notification
             Intent serviceIntent = new Intent(this, ForegroundProcess.class);
             serviceIntent.putExtra("sensor_values", sensor_values);
@@ -116,6 +115,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 startForegroundService(serviceIntent);
             }
         }
+        sensorManager.unregisterListener(this);
         super.onPause();
 
     }
@@ -124,10 +124,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     protected void onStart() {
         super.onStart();
         // Registering the sensors
-        sensorManager.registerListener(this, light_sensor, SensorManager.SENSOR_DELAY_NORMAL);
-        sensorManager.registerListener(this, proximity_sensor, SensorManager.SENSOR_DELAY_NORMAL);
-        sensorManager.registerListener(this, accelerometer_sensor, SensorManager.SENSOR_DELAY_NORMAL);
-        sensorManager.registerListener(this, gyroscope_sensor, SensorManager.SENSOR_DELAY_NORMAL);
+        sensorManager.registerListener(this, light_sensor, SensorManager.SENSOR_DELAY_GAME);
+        sensorManager.registerListener(this, proximity_sensor, SensorManager.SENSOR_DELAY_GAME);
+        sensorManager.registerListener(this, accelerometer_sensor, SensorManager.SENSOR_DELAY_GAME);
+        sensorManager.registerListener(this, gyroscope_sensor, SensorManager.SENSOR_DELAY_GAME);
     }
 
     @Override
@@ -149,29 +149,17 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         // Getting values from sensors on every changes
         if(event.sensor.getType() == Sensor.TYPE_LIGHT){
             light_value.setText(String.valueOf(event.values[0]));
-            /*sensor_values.light_value = event.values[0];*/
         }
         if(event.sensor.getType() == Sensor.TYPE_PROXIMITY){
             proxy_value.setText(String.valueOf(event.values[0]));
-            /*sensor_values.proxy_value = Double.parseDouble(String.format("%.2f",event.values[0]));*/
         }
         if(event.sensor.getType() == Sensor.TYPE_ACCELEROMETER){
             accelerometer_value.setText("X:" + String.format("%.2f",event.values[0]) + "  Y:" + String.format("%.2f",event.values[1]) + "  Z:" + String.format("%.2f",event.values[2]) );//+ "(m/s^2)"
-            /*sensor_values.accelerometer_value[0] = Double.parseDouble(String.format("%.2f",event.values[0]));
-            sensor_values.accelerometer_value[1] = Double.parseDouble(String.format("%.2f",event.values[1]));
-            sensor_values.accelerometer_value[2] = Double.parseDouble(String.format("%.2f",event.values[2]));*/
         }
         if(event.sensor.getType() == Sensor.TYPE_GYROSCOPE){
             gyro_value.setText("X:" + String.format("%.2f",event.values[0]) + "  Y:" + String.format("%.2f",event.values[1]) + "  Z:" + String.format("%.2f",event.values[2]));//+ " (rad/s)"
-            /*sensor_values.gyro_value[0] = Double.parseDouble(String.format("%.2f",event.values[0]));
-            sensor_values.gyro_value[1] = Double.parseDouble(String.format("%.2f",event.values[1]));
-            sensor_values.gyro_value[2] = Double.parseDouble(String.format("%.2f",event.values[2]));*/
+
         }
-        /*Intent serviceIntent = new Intent(this, ForegroundProcess.class);
-        serviceIntent.putExtra("sensor_values", sensor_values);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            startForegroundService(serviceIntent);
-        }*/
     }
 
     @Override
