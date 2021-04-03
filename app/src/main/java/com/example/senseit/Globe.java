@@ -10,6 +10,7 @@ public class Globe extends Application {
     public static final String CHANNEL_ID = "sensor_value_channel";
     public static final String CHANNEL_NAME = "Sensor Values";
     public static final String CHANNEL_DESC = "Here four sensor values will be shown";
+    public static Boolean inApp = false;
 
     @Override
     public void onCreate() {

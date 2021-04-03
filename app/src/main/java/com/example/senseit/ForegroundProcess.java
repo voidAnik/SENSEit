@@ -1,6 +1,7 @@
 package com.example.senseit;
 
 import android.annotation.SuppressLint;
+import android.app.ActivityManager;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -71,6 +72,7 @@ public class ForegroundProcess extends Service implements SensorEventListener {
             stopForeground(true); // Stops foreground service for a button click on mainActivity
             sensorManager.unregisterListener(this);
             handler.removeCallbacks(runnable);
+
         }
         return START_NOT_STICKY;
     }

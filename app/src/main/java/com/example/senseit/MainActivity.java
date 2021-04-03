@@ -129,6 +129,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 startForegroundService(serviceIntent);
             }
+            Globe.inApp = false;
         }
         sensorManager.unregisterListener(this);
         super.onPause();
@@ -147,17 +148,19 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     @Override
     protected void onResume() {
-
+        super.onResume();
         // Foreground service is being killed when application opens
         goingHistory = false;
         serviceStopped = false;
-        Intent serviceIntent = new Intent(this, ForegroundProcess.class);
-        serviceIntent.putExtra("sensor_values", sensor_values);
-        serviceIntent.putExtra("bool", false);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            startForegroundService(serviceIntent);
+        if(!Globe.inApp) {
+            Toast.makeText(this, "onResume", Toast.LENGTH_SHORT).show();
+            Intent serviceIntent = new Intent(this, ForegroundProcess.class);
+            serviceIntent.putExtra("sensor_values", sensor_values);
+            serviceIntent.putExtra("bool", false);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                startForegroundService(serviceIntent);
+            }
         }
-        super.onResume();
     }
 
     @SuppressLint({"DefaultLocale", "SetTextI18n"})

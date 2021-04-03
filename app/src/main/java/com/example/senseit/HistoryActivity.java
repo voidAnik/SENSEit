@@ -42,6 +42,8 @@ public class HistoryActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setTitle("HISTORY"); // Changing title name
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // Back to home option enabled
 
+        Globe.inApp = true;
+
         //Bindings
         listView = findViewById(R.id.l_view);
         databaseHelper = new DatabaseHelper(this);
