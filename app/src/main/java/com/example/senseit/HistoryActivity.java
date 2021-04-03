@@ -124,10 +124,10 @@ public class HistoryActivity extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             if(databaseHelper.delete_data(sensor_id)){
-                                ArrayList<String> column1 = new ArrayList<>();
-                                ArrayList<String> column2 = new ArrayList<>();
+                                ArrayList<String> null1 = new ArrayList<>();
+                                ArrayList<String> null2 = new ArrayList<>();
                                 Toast.makeText(HistoryActivity.this, "SUCCESSFULLY DELETED!", Toast.LENGTH_SHORT).show();
-                                CustomAdapter adapter = new CustomAdapter(HistoryActivity.this, column1, column2);
+                                CustomAdapter adapter = new CustomAdapter(HistoryActivity.this, null1, null2);
                                 listView.setAdapter(adapter);
                             }else {
                                 Toast.makeText(HistoryActivity.this, Html.fromHtml("<font color='"+ Color.RED +"' >" + "NO DATA FOUND!" + "</font>"), Toast.LENGTH_SHORT).show();

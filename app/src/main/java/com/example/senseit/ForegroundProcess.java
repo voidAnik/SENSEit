@@ -144,6 +144,7 @@ public class ForegroundProcess extends Service implements SensorEventListener {
         sensorManager.unregisterListener(this);
         stopForeground(true);
         wakeLock.release();
+        handler.removeCallbacks(runnable);
     }
 
     @Nullable

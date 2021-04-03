@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     Sensor light_sensor, proximity_sensor, accelerometer_sensor, gyroscope_sensor;
     SensorValue sensor_values;
     Handler handler;
+    Runnable runnable;
 
     //Customs
     Boolean goingHistory;
@@ -104,15 +105,16 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             gyro_value.setText(R.string.not_available_gyro);
         }
 
-        /*handler = new Handler(); // handler to save the sensor data to database every 5 minute
+        //Saving data every 5 minutes when in application
+        handler = new Handler(); // handler to save the sensor data to database every 5 minute
         final int delay =300000; // 1000 milliseconds == 1 second
-        handler.postDelayed(new Runnable() {
+        runnable = new Runnable() {
             public void run() {
-                //long[] row_ids = new DatabaseHelper(MainActivity.this).insertData(sensor_values);
-                new ForegroundProcess().save_data(sensor_values);
+                long[] unused = new DatabaseHelper(MainActivity.this).insertData(sensor_values);
                 handler.postDelayed(this, delay);
             }
-        }, delay);*/
+        };
+        handler.postDelayed(runnable,delay);
 
 
     }
@@ -120,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     protected void onPause() {
         if(!goingHistory && !serviceStopped) {
-            // Starting the foreground services with the live notification
+            // Starting the foreground services with the live notification when application is minimized
             Intent serviceIntent = new Intent(this, ForegroundProcess.class);
             serviceIntent.putExtra("sensor_values", sensor_values);
             serviceIntent.putExtra("bool", true);
@@ -145,6 +147,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     @Override
     protected void onResume() {
+
+        // Foreground service is being killed when application opens
         goingHistory = false;
         serviceStopped = false;
         Intent serviceIntent = new Intent(this, ForegroundProcess.class);
@@ -265,4 +269,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         history_intent.putExtra("sensor_id", id);
         startActivity(history_intent);
     }
+
+
 }

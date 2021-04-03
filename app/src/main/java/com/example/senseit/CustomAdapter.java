@@ -15,7 +15,6 @@ public class CustomAdapter extends BaseAdapter {
     ArrayList<String> column1;
     ArrayList<String> column2;
     Context context;
-    private LayoutInflater inflater;
 
     CustomAdapter(Context context, ArrayList<String> column1, ArrayList<String> column2){
 
@@ -43,10 +42,10 @@ public class CustomAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         if(convertView == null){
-           inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-           convertView = inflater.inflate(R.layout.listview_history, parent, false);
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = inflater.inflate(R.layout.listview_history, parent, false);
         }
-        if (position % 2 == 1) {
+        if (position % 2 == 1) { // Giving a background shade to rows
             convertView.setBackgroundColor(Color.parseColor("#ebebef"));
         } else {
             convertView.setBackgroundColor(Color.parseColor("#e5e5ea"));
