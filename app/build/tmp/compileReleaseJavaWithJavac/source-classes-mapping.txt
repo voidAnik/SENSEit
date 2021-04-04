@@ -4,6 +4,7 @@ com/example/senseit/ForegroundProcess.java
 com/example/senseit/MainActivity.java
  com.example.senseit.MainActivity
  com.example.senseit.MainActivity$1
+ com.example.senseit.MainActivity$2
 com/example/senseit/DatabaseHelper.java
  com.example.senseit.DatabaseHelper
 com/example/senseit/HistoryActivity.java
